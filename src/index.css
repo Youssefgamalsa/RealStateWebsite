@@ -1,0 +1,27 @@
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+.cards {
+  width: 85%;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  gap: 20px;
+}
+table {
+  margin-left: auto;
+}
+table tbody tr {
+  margin: 5px 10px;
+}
+table tbody tr td {
+  padding: 8px;
+}
+table tbody tr td i {
+  font-size: 23px;
+}
+.card h3 {
+  color:blueviolet;
+}
