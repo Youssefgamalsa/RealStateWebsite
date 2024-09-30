@@ -1,34 +1,26 @@
-// import { Card } from "react-bootstrap";
-import "./App.css";
-import Card from "./modules/Card/Card";
-import Navbar from "./modules/Shared Components/Navbar/Navbar";
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import Home from "./modules/Shared Components/Home/Home"
+import { ToastContainer } from 'react-toastify';
+import MasterLayout from './modules/Shared Components/MasterLayout/MasterLayout';
+import Card from "./modules/Card/Card"
 function App() {
+  const routes = createBrowserRouter([
+    {
+      path: '/',
+      element: < MasterLayout/>,
+      // errorElement: <NotFound />,
+      children: [
+        { index: true, element: <Home /> },
+        {path:"card", element:<Card/>}
+      ],
+    },
+  ]);
+
   return (
-    <div>
-      <Navbar />
-      <div
-        className="title my-5"
-        style={{ width: "85%", margin: "auto", textAlign: "center" }}
-      >
-        <h1
-          style={{ fontFamily: "Beiruti", fontWeight: "900", fontSize: "40px" }}
-        >
-          عقارات العدوه
-        </h1>
-      </div>
-      <div className="cards">
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-      </div>
-    </div>
+    <>
+      <ToastContainer />
+      <RouterProvider router={routes} />
+    </>
   );
 }
 
