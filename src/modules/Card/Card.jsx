@@ -40,6 +40,8 @@ export default function Card() {
         </table>
         <h3> 3,600,800 جنيه</h3>
       </div>
+      <i className="fa-solid fa-heart fav"></i>
+      <button className="buy">للايجار </button>
     </div>
   );
 }
